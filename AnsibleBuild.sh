@@ -9,7 +9,7 @@ yum -y install gcc openssl-devel libffi-devel python-devel vim wget curl bzip2
 pip install ansible
 
 #Change all call from ansible.compat.six to six 
-grep -rl ansible.compat.six /usr/local/lib/python2.7/site-packages/ansible | xargs sed -i ‘s/ansible.compat.six/six/g’
+grep -rl ansible.compat.six /usr/local/lib/python2.7/site-packages/ansible | xargs sed -i 's/ansible.compat.six/six/g'
 
 #Install Ansible source 
 cd /root/ 
