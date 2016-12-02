@@ -10,13 +10,14 @@ before_install:
   - pwd
   - echo "Testing Docker Build"
   - docker pull otassetti/builder-python2.7.5:centos6
-  - docker run -ti otassetti/builder-python2.7.5:centos6 /bin/bash
 
 script:
   - ls
   - pwd
   - docker ps -a
+  - docker run -ti -v ./:/tmp/ otassetti/builder-python2.7.5:centos6 /bin/bash -c '/tmp/script.sh"
+  - exit
 
 after_success:
-  - echo 
+  - echo "end"
  
