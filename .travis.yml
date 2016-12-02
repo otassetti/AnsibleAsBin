@@ -6,17 +6,12 @@ services:
   - docker
 
 before_install:
-  - ls
-  - pwd
-  - echo "Testing Docker Build"
   - docker pull otassetti/builder-python2.7.5:centos6
 
 script:
-  - ls
-  - pwd
-  - docker ps -a
-  - docker run -ti -v /home/travis/build/otassetti/AnsibleAsBin/:/tmp/ otassetti/builder-python2.7.5:centos6 /bin/bash -c '/tmp/AnsibleBuild.sh'
-  - exit
+ - chmod 777 AnsibleBuild.sh
+ - docker run -ti -v /home/travis/build/otassetti/AnsibleAsBin/:/tmp/ otassetti/builder-python2.7.5:centos6 /bin/bash -c '/tmp/AnsibleBuild.sh'
+ - exit
 
 after_success:
   - echo "end"
