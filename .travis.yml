@@ -15,7 +15,7 @@ script:
   - ls
   - pwd
   - docker ps -a
-  - docker run -ti -v ./:/tmp/ otassetti/builder-python2.7.5:centos6 /bin/bash -c '/tmp/script.sh"
+  - docker run -ti -v /home/travis/build/otassetti/AnsibleAsBin/:/tmp/ otassetti/builder-python2.7.5:centos6 /bin/bash -c '/tmp/script.sh"
   - exit
 
 after_success:
