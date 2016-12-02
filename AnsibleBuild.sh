@@ -20,8 +20,9 @@ git checkout stable-2.2
 #Install Devel Version of Pyinstaller (The stable version get an AssertionError) 
 cd /root/
 git clone https://github.com/otassetti/pyinstaller.git
+cd pyinstaller
 git checkout develop
 
 #Compile 
 cd /root/pyinstaller 
-python2.7 ./pyinstaller.py –onefile –clean –nowindow –upx-dir=/opt/upx-3.91-amd64_linux/ /root/ansible/bin/ansible
+python2.7 ./pyinstaller.py --onefile --clean --nowindow --upx-dir=/opt/upx-3.91-amd64_linux/ /root/ansible/bin/ansible
